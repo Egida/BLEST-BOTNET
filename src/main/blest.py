@@ -336,7 +336,7 @@ def main():
                             print()
                             for zm in total_zombies:
                                 num+=1
-                                print(Fore.GREEN+num+Fore.RESET, '-', zm)
+                                print(f'{num} -', zm)
                             print()
                     elif blest[1] == 'delete':
                         total_zombies.clear()
