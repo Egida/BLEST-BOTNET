@@ -15,3 +15,6 @@ Blest Botnet a Explotation Framework with published modules and own botnet syste
 # Bugs
 - if you saw any unknown bug, please submit it here: <a href="https://github.com/G00Dway/BLEST-BOTNET/issues">Issues Page</a>
 - Thanks for using! maybe you want to rate our project?.....
+
+# Known bugs
+- Yes, there MAY be a bit of bugs BUT DONT WORRY!! We will fix them all as fast as possible!
