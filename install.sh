@@ -14,7 +14,6 @@ git clone https://github.com/G00Dway/BLEST-BOTNET /usr/share/BLEST > /dev/null 2
 chmod +x core/bin/blest
 cp -r core/bin/blest /usr/bin
 mkdir /root/.blest
-mkdir /usr/var/blest_bin
 apt install python3-pip ruby perl wget curl steghide nmap figlet toilet lolcat xterm zenity -y > /dev/null 2>&1
 apt install python-is-python3 -y > /dev/null 2>&1
 apt install python2 -y > /dev/null 2>&1
