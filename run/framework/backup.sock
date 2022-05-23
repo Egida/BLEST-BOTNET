@@ -1,0 +1,3 @@
+sockets = network/botnet.py
+connector = bots/socket_connect.py
+drive = 0
