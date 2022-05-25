@@ -10,10 +10,9 @@ apt autoclean > /dev/null 2>&1
 echo -e "\033[1;33m[!] \033[0mGüncellemeler kontrol ediliyor..."
 bash src/updates/blest_update.sh
 echo -e "\033[1;77m[i] \033[0mBlest yükleniyor... (Arka fon)"
-git clone https://github.com/G00Dway/BLEST-BOTNET /usr/share/BLEST > /dev/null 2>&1
-chmod +x core/bin/blest
-cp -r core/bin/blest /usr/bin
-mkdir /root/.blest
+pip install colorama &> colorama.log
+python3 core/setup/git_setup.py /usr/share/BLEST install
+echo -e "\033[1;77m[i] \033[0mAPT paketler yükleniyor... (Arka fon)"
 apt install python3-pip ruby perl wget curl steghide nmap figlet toilet lolcat xterm zenity -y > /dev/null 2>&1
 apt install python-is-python3 -y > /dev/null 2>&1
 apt install python2 -y > /dev/null 2>&1
