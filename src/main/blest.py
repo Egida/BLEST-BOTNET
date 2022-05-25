@@ -261,7 +261,7 @@ ______   _        _______  _______ _________
 ''']
     banner_selected = random.choice(banners)
     banner = f'''
-{banner_selected}    Zombileri Kontrol Et ;)
+{banner_selected}
                                              
 ''''''-----------------={ BLEST By Blest Boyz }=-----------------'''f'''
 
