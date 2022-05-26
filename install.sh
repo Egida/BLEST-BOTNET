@@ -13,6 +13,7 @@ echo -e "\033[1;77m[i] \033[0mBlest yükleniyor... (Arka fon)"
 pip install colorama &> colorama.log
 python3 core/setup/git_setup.py /usr/share/BLEST install
 echo -e "\033[1;77m[i] \033[0mAPT paketler yükleniyor... (Arka fon)"
+mkdir /usr/var/blest_backup
 apt install python3-pip ruby perl wget curl steghide nmap figlet toilet lolcat xterm zenity -y > /dev/null 2>&1
 apt install python-is-python3 -y > /dev/null 2>&1
 apt install python2 -y > /dev/null 2>&1
