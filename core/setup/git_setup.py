@@ -18,8 +18,10 @@ cmd = sys.argv[1]
 type = sys.argv[2]
 def install():
     try:
+        if os.path.exists("/usr/var/blest_backup/BLEST"):
+            os.system("rm -rf /usr/var/blest_backup/BLEST")
         if os.path.exists(cmd):
-            os.system(f'rm -rf {cmd} > /dev/null 2>&1')
+            os.system(f'mv {cmd} /usr/var/blest_backup')
         else:
             pass
     except:
