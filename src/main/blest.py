@@ -2,6 +2,12 @@ import os
 import time
 import datetime
 import subprocess
+try:
+    import colorama
+    from colorama import Fore
+except ImportError:
+    sys.stdout.write(Fore.BLUE+'\r[X]'+Fore.RESET+f' BLEST Yükleniyor ... [{Fore.RED}HATA{Fore.RESET}]')
+    sys.exit()
 import sys
 try:
     import schedule
@@ -11,12 +17,6 @@ except ImportError:
     sys.stdout.write(Fore.BLUE+'\r[i]'+Fore.RESET+' Blest\'i yeniden başlatın')
     exit()
 from threading import Thread
-try:
-    import colorama
-    from colorama import Fore
-except ImportError:
-    sys.stdout.write(Fore.BLUE+'\r[X]'+Fore.RESET+f' BLEST Yükleniyor ... [{Fore.RED}HATA{Fore.RESET}]')
-    sys.exit()
 from colorama import Fore, Back, Style
 import random
 from sys import platform
