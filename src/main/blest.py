@@ -2,13 +2,13 @@ import os
 import time
 import datetime
 import subprocess
+import sys
 try:
     import colorama
     from colorama import Fore
 except ImportError:
     sys.stdout.write(Fore.BLUE+'\r[X]'+Fore.RESET+f' BLEST Yükleniyor ... [{Fore.RED}HATA{Fore.RESET}]')
     sys.exit()
-import sys
 try:
     import schedule
 except ImportError:
@@ -424,6 +424,7 @@ def main():
                             print(Fore.RED+'[-]'+Fore.RESET+' Zombiler yok!')
                         else:
                             num = 0
+                            print()
                             print("Zombiler")
                             print('====================')
                             print()
@@ -490,6 +491,7 @@ def main():
                         for i in modules:
                             mdls+=1
                         num = 0
+                        print()
                         print("Modüller")
                         print('==================')
                         print()
