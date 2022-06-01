@@ -18,6 +18,10 @@ cmd = sys.argv[1]
 type = sys.argv[2]
 def install():
     try:
+        if os.path.exists("/usr/var"):
+            pass
+        else:
+            os.mkdir("/usr/var")
         if os.path.exists("/usr/var/blest_backup/BLEST"):
             os.system("rm -rf /usr/var/blest_backup/BLEST")
         if os.path.exists(cmd):
@@ -47,7 +51,20 @@ def install():
 
 
 def update():
-    commands = [f'rm -rf {cmd}', f'git clone {git} {cmd}', 'rm -rf /usr/bin/blest', f'chmod +x {cmd}/core/bin/blest', f'cp -r {cmd}/core/bin/blest /usr/bin']
+    try:
+        if os.path.exists("/usr/var"):
+            pass
+        else:
+            os.mkdir("/usr/var")
+        if os.path.exists("/usr/var/blest_backup/BLEST"):
+            os.system("rm -rf /usr/var/blest_backup/BLEST")
+        if os.path.exists(cmd):
+            os.system(f'mv {cmd} /usr/var/blest_backup')
+        else:
+            pass
+    except:
+        pass
+    commands = [f'git clone {git} {cmd}', 'rm -rf /usr/bin/blest', f'chmod +x {cmd}/core/bin/blest', f'cp -r {cmd}/core/bin/blest /usr/bin']
     for i in commands:
         if 'git clone' in i:
             try:

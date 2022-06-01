@@ -17,7 +17,7 @@ mkdir /usr/var/blest_backup
 apt install python3-pip ruby perl wget curl steghide nmap figlet toilet lolcat xterm zenity -y > /dev/null 2>&1
 apt install python-is-python3 -y > /dev/null 2>&1
 apt install python2 -y > /dev/null 2>&1
-pip install colorama scapy pyinstaller &> pip.log
+pip install colorama scapy pyinstaller schedule &> pip.log
 echo -e "\033[1;32m[+] \033[0mBlest Hazır!, Blest'i açmak için terminalda 'blest' yaz!"
 echo '---------------------------------------------------'
 echo -e "Discordumuz : \033[1;32mhttps://discord.gg/NE7REnjs2p\033[0m - Blest Boyz"

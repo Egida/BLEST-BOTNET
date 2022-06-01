@@ -1,7 +1,16 @@
 import os
 import time
+import datetime
 import subprocess
 import sys
+try:
+    import schedule
+except ImportError:
+    sys.stdout.write(Fore.BLUE+'\r[i]'+Fore.RESET+' BLEST Yükleniyor ... [*]')
+    os.system('pip install schedule &> /usr/share/BLEST/pip.log')
+    sys.stdout.write(Fore.BLUE+'\r[i]'+Fore.RESET+' Blest\'i yeniden başlatın')
+    exit()
+from threading import Thread
 try:
     import colorama
     from colorama import Fore
@@ -13,14 +22,16 @@ import random
 from sys import platform
 total_botnet = 0
 total_zombies = []
+start_time = time.time()
 modules = []
 modules_num = 0
 loading_chars = []
+current_time = datetime.datetime.now().strftime("%H")
 typos = []
 extensions = ['.py', '.rb', '.sh', '.pl', '.html']
 mdl_options = []
 root_path = "/root/.blest"
-trash_path = "/usr/var/blest_trash"
+backup_path = "/usr/var/blest_backup"
 log_path = None
 colorama.init()
 sys.stdout.write(Fore.BLUE+'[i]'+Fore.RESET+' Keş temizleniyor...')
@@ -40,6 +51,29 @@ about = f'''
 ========================================
 > Discord       : {Fore.GREEN}https://discord.gg/NE7REnjs2p{Fore.RESET} 
 '''
+
+def timer_update():
+    try:
+        if os.path.exists("/usr/share/BLEST/time.log"):
+            with open("/usr/share/BLEST/time.log", 'r') as now:
+                n = now.read()
+            if current_time == n:
+                pass
+            elif current_time <= n:
+                pass
+            else:
+                c = current_time-n
+                print(Fore.YELLOW+'[+]'+Fore.RESET+f' Güncellemeden bu yana {c} saat geçti, lütfen güncellemeleri kontrol edin')
+            with open("/usr/share/BLEST/time.log", 'w') as f:
+                f.write(current_time)
+        else:
+            os.system('touch /usr/share/BLEST/time.log')
+            with open("/usr/share/BLEST/time.log", 'w') as f:
+                f.write(current_time)
+            timer_update()
+    except:
+        pass
+
 
 
 
@@ -216,14 +250,18 @@ def banner_etc():
      |||||||||||
      |||||||||||
      `"""""""""`  blest/recycle/bin/sh
-''', '''
-   ________
-   < blest >
-   --------
-       \   ,__,
-        \  (oo)____
-           (__)    )\
-              ||--|| *
+''', f'''
+01000010 01001100 01000101 01010011 01010100 
+0100001B 0100110L 0100010E 0101001S 0101010T
+01000010 01001100 01000101 01010011 01010100
+01000010 01001100 01000101 01010011 01010100
+01000010 01001100 01000101 01010011 01010100
+0100001B 0100110L 0100010E 0101001S 0101010T
+01000010 01001100 01000101 01010011 01010100
+01000010 01001100 01000101 01010011 01010100
+01000010 01001100 01000101 01010011 01010100
+
+                    {Fore.YELLOW}The blest framework...{Fore.RESET}
 ''', '''
        (          (            
    (   )\ )       )\ )  *   )  
@@ -232,7 +270,7 @@ def banner_etc():
 ((_)_ (_))  ((_) (_)) (_(_())  
  | _ )| |   | __|/ __||_   _|  
  | _ \| |__ | _| \__ \  | |    
- |___/|____||___||___/  |_|    
+ |___/|____||___||___/  |_|            
 ''', '''
 __________.____     ___________ ____________________
 \______   \    |    \_   _____//   _____/\__    ___/
@@ -277,6 +315,7 @@ ______   _        _______  _______ _________
 
 def main():
     banner_etc()
+    timer_update()
     try:
         blest = input('(\033[4mblest\033[0m) > ').strip(" ")
     except Exception:
@@ -385,7 +424,8 @@ def main():
                             print(Fore.RED+'[-]'+Fore.RESET+' Zombiler yok!')
                         else:
                             num = 0
-                            print("----- Mevcut toplam zombi:")
+                            print("Zombiler")
+                            print('====================')
                             print()
                             for zm in total_zombies:
                                 num+=1
@@ -450,8 +490,8 @@ def main():
                         for i in modules:
                             mdls+=1
                         num = 0
-                        print(Fore.CYAN+f"> Modüller: {Fore.RESET}{mdls}")
-                        print("------- Toplam kullanılabilir modüller:")
+                        print("Modüller")
+                        print('==================')
                         print()
                         for v in modules:
                             num+=1
