@@ -424,7 +424,7 @@ def main():
                             print(Fore.RED+'[-]'+Fore.RESET+' Zombiler yok!')
                         else:
                             num = 0
-                            print()
+                            print('')
                             print("Zombiler")
                             print('====================')
                             print()
@@ -491,7 +491,7 @@ def main():
                         for i in modules:
                             mdls+=1
                         num = 0
-                        print()
+                        print('')
                         print("Modüller")
                         print('==================')
                         print()
