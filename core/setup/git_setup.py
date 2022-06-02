@@ -24,10 +24,16 @@ def install():
             os.mkdir("/usr/var")
         if os.path.exists("/usr/var/blest_backup/BLEST"):
             os.system("rm -rf /usr/var/blest_backup/BLEST")
+            os.mkdir("/usr/var/blest_backup")
         if os.path.exists(cmd):
             os.system(f'mv {cmd} /usr/var/blest_backup')
         else:
             pass
+    except:
+        pass
+    try:
+        if os.path.exists(cmd):
+            os.system(f'mv {cmd} /usr/var/blest_backup/BLEST')
     except:
         pass
     requirements = ['chmod +x core/bin/blest', 'cp -r core/bin/blest /usr/bin', 'mkdir /root/.blest']
@@ -58,12 +64,14 @@ def update():
             os.mkdir("/usr/var")
         if os.path.exists("/usr/var/blest_backup/BLEST"):
             os.system("rm -rf /usr/var/blest_backup/BLEST")
+            os.mkdir("/usr/var/blest_backup")
         if os.path.exists(cmd):
             os.system(f'mv {cmd} /usr/var/blest_backup')
         else:
             pass
     except:
         pass
+    os.system(f'mv {cmd} /usr/var/blest_backup/BLEST')
     commands = [f'git clone {git} {cmd}', 'rm -rf /usr/bin/blest', f'chmod +x {cmd}/core/bin/blest', f'cp -r {cmd}/core/bin/blest /usr/bin']
     for i in commands:
         if 'git clone' in i:

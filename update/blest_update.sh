@@ -1,4 +1,6 @@
 echo -e "\033[1;77m[i] \033[0mGüncellemeler kontrol ediliyor..."
+cd ..
+cd
 cd /usr/share/BLEST
 BRANCH="main"
 LAST_UPDATE=`git show --no-notes --format=format:"%H" $BRANCH | head -n 1`

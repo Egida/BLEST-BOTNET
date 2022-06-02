@@ -424,7 +424,7 @@ def main():
                             print(Fore.RED+'[-]'+Fore.RESET+' Zombiler yok!')
                         else:
                             num = 0
-                            print('')
+                            print()
                             print("Zombiler")
                             print('====================')
                             print()
@@ -491,7 +491,7 @@ def main():
                         for i in modules:
                             mdls+=1
                         num = 0
-                        print('')
+                        print()
                         print("Modüller")
                         print('==================')
                         print()
@@ -506,6 +506,14 @@ def main():
         elif blest[0] == 'banner':
             banner_etc()
         elif blest[0] == 'update':
+            try:
+                if os.path.exists("/usr/share/BLEST/updt_LOAD.log"):
+                    pass
+                else:
+                    print(Fore.CYAN+'[#]'+Fore.RESET+' Yüklemeler yükleniyor...')
+                    os.system('touch /usr/share/BLEST/updt_LOAD.log')
+            except:
+                pass
             os.system('bash /usr/share/BLEST/update/blest_update.sh')
         else:
             print(Fore.RED+'[-]'+Fore.RESET+' Emr bulunmadı: "'+blest[0]+'"')
