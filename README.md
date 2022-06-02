@@ -4,7 +4,7 @@
 Blest Botnet a Explotation Framework with published modules and own botnet system
 # BLEST
 - Welcome to BLEST! The explotation framework with modules and own botnet system! Made by (Blest Boyz)
-- This version is ONLY with turkish language, so if you want english version you need to wait
+- This version is ONLY with turkish language, so if you want english version you need to wait it to be appeared in releases!
 
 # Screenshots
 ![2022-05-22](https://user-images.githubusercontent.com/80381071/169860346-2fbb3e39-1252-4d99-bcc4-063491dccba0.png)
